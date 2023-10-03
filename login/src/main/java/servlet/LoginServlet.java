@@ -28,19 +28,16 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         Database db = new Database();
         
-        boolean check = db.checkuser(username, password);
-        if(check) {
+        boolean isAuthenticated = false;
+        isAuthenticated = db.checklogin(username, password);
+        if(isAuthenticated) {
         	HttpSession session = request.getSession();
         	session.setAttribute("username", username);
         	response.sendRedirect("welcome.jsp");
         }
         else {
-        	response.sendRedirect("login.jsp");
+        	response.sendRedirect("login.jsp?error=true");
         }
-       // if(db.checkuser(username, password)) {
-       // 	response.sendRedirect("welcome.jsp");
-       // };
-
 		
 	}
 

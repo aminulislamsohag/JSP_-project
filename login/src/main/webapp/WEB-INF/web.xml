@@ -19,6 +19,15 @@
 		<url-pattern>/Login</url-pattern>
 		</servlet-mapping>
 		
+		<servlet>
+		<servlet-name>SignUP</servlet-name>
+		<servlet-class>servlet.SignUpServlet</servlet-class>
+		</servlet>
+		
+		<servlet-mapping>
+		<servlet-name>SignUP</servlet-name>
+		<url-pattern>/Signup</url-pattern>
+		</servlet-mapping>
 		
 		<servlet>
 		<servlet-name>logout</servlet-name>
@@ -29,6 +38,18 @@
 		<servlet-name>logout</servlet-name>
 		<url-pattern>/Logout</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+		<servlet-name>RestPassword</servlet-name>
+		<servlet-class>servlet.PasswordResetServlet</servlet-class>
+		</servlet>
+		
+		<servlet-mapping>
+		<servlet-name>RestPassword</servlet-name>
+		<url-pattern>/PasswordReset</url-pattern>
+		</servlet-mapping>
+		
+		
   
   
 </web-app>
